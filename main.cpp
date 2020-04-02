@@ -17,7 +17,13 @@ video: Chapter 2 - Part 3
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t)
  put them here: 
  
- 
+ int
+ float
+ double
+ char
+ bool
+ void
+ wchar_t
  
  
  
@@ -69,6 +75,33 @@ void variableDeclarations()
     
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+         // Interger
+    int freqA =  20;
+    int freqB =  200;
+    int freqC =  400;
+
+    // Floating point
+    float fineA = 0.65f;
+    float fineB = 0.25f;
+    float fineC = 0.11f;
+
+    // Double floating point
+    double randomA = 0.14542132;
+    double randomB = 1.45645413216;
+    double randomC = 0.4214214452;
+
+    //Character
+    char knobA = 'A';
+    char knobB = 'b';
+    char knobC = 'c';
+
+    //boolean
+    bool on = true;
+    bool filterStatus = true;
+    bool sync = false;
+
+    ignoreUnused(freqA, freqB, freqC, fineA, fineB, fineC, randomA, randomB, randomC, knobA, knobB, knobC, on, filterStatus, sync);
 }
 /*
  10 functions
@@ -83,70 +116,112 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int knobStat(bool knobOn, int position = 0)
+{
+    ignoreUnused(knobOn, position);
+    return {};
+}
 /*
  2)
  */
-
+float fineTuning(float oscA, float oscB = 2.5f)
+{
+    ignoreUnused(oscA, oscB);
+    return {};
+}
 /*
  3)
  */
-
+bool limiter(bool cellingOn, bool softKneeOn)
+{
+    ignoreUnused(cellingOn, softKneeOn);
+    return {};
+}
 /*
  4)
  */
-
+double randomStream(double bottonA, bool switchA )
+{
+    ignoreUnused(bottonA, switchA);
+    return {};
+}
 /*
  5)
  */
-
+void resetBotton( bool bottonToggle, int delayTime = 3)
+{
+    ignoreUnused(bottonToggle, delayTime);
+}
 /*
  6)
  */
-
+char presetName(char presetNum, bool toggle = false)
+{
+    ignoreUnused(presetNum, toggle);
+    return {};
+}
 /*
  7)
  */
-
+bool metronome(bool metronomeStat, float tempo = 120.0f)
+{
+    ignoreUnused(metronomeStat, tempo);
+    return {};
+}
 /*
  8)
  */
-
+int scaleSelector(char scaleType, int root, int octave)
+{
+    ignoreUnused(scaleType, root, octave);
+    return {};
+}
 /*
  9)
  */
-
+int automation(float filterCutoff, char filterType = 's')
+{
+    ignoreUnused(filterCutoff, filterType);
+    return {};
+}
 /*
  10)
  */
-
+float compressor(float threshold, float knee = 2.0f)
+{
+    ignoreUnused(threshold, knee);
+    return {};
+}
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
+
+    ignoreUnused(carRented);
+
     
     //1)
-    
+    auto knobControl = knobStat(true, 3);
     //2)
-    
+    auto fineControl = fineTuning(0.25f, 0.7f);
     //3)
-    
+    auto useLimiter = limiter(true, true);
     //4)
-    
+    auto stream = randomStream(0.4545,true);
     //5)
-    
+    resetBotton(true, 5);
     //6)
-    
+    auto UsePreset = presetName('a', true);
     //7)
-    
+    auto UseMetronome = metronome(true, 80.6f);
     //8)
-    
+    auto scale =scaleSelector('m', 1, 4);
     //9)
-    
+    auto UseAutomation = automation(600.0f, 'a');
     //10)
+    auto UseCompressor = compressor(4.5f, 2.0f);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(knobControl, fineControl, useLimiter, stream, UsePreset, UseMetronome, scale, UseAutomation, UseCompressor);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
