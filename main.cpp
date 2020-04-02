@@ -126,8 +126,8 @@ int knobStat(bool knobOn, int position = 0)
  */
 float fineTuning(float oscA, float oscB = 2.5f)
 {
-ignoreUnused(oscA, oscB);
-return {};
+    ignoreUnused(oscA, oscB);
+    return {};
 }
 /*
  3)
